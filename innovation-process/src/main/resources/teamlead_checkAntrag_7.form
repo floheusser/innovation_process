@@ -1,0 +1,139 @@
+{
+  "components": [
+    {
+      "label": "Was muss verbessert werden?",
+      "type": "textarea",
+      "layout": {
+        "row": "Row_186f3hy",
+        "columns": null
+      },
+      "id": "Field_1uq1a32",
+      "key": "commentBoard",
+      "description": "Kommentar von  Innovationsboard",
+      "conditional": {
+        "hide": "=commentBoard = \"\""
+      },
+      "readonly": true
+    },
+    {
+      "label": "Titel der Innovation",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_0vqfxge",
+        "columns": null
+      },
+      "id": "Field_17hw6co",
+      "key": "title",
+      "validate": {
+        "required": true
+      },
+      "readonly": true
+    },
+    {
+      "label": "Beschreiung der Innovation",
+      "type": "textarea",
+      "layout": {
+        "row": "Row_0588kye",
+        "columns": null
+      },
+      "id": "Field_0agwn9w",
+      "key": "description",
+      "validate": {
+        "required": true
+      },
+      "readonly": true
+    },
+    {
+      "label": "Name Erfasser",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_0utenkt",
+        "columns": null
+      },
+      "id": "Field_0v0dv7a",
+      "key": "creatorName",
+      "description": "Vor- und Nachname",
+      "validate": {
+        "required": true
+      },
+      "readonly": true
+    },
+    {
+      "label": "Status",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_0dbv49x",
+        "columns": null
+      },
+      "id": "Field_06oenb2",
+      "key": "status",
+      "description": "offen, in Prüfung, genehmigt, abgelehnt",
+      "disabled": false,
+      "readonly": true
+    },
+    {
+      "label": "Kommentare",
+      "type": "textarea",
+      "layout": {
+        "row": "Row_0cbxudd",
+        "columns": null
+      },
+      "id": "Field_1mhb6ya",
+      "key": "comments",
+      "readonly": true
+    },
+    {
+      "values": [
+        {
+          "label": "Annehmen",
+          "value": "approved"
+        },
+        {
+          "label": "Ablehnen",
+          "value": "declined"
+        },
+        {
+          "label": "Mehr Informationen nötig",
+          "value": "moreInfo"
+        }
+      ],
+      "label": "Antrag annehmen?",
+      "type": "select",
+      "layout": {
+        "row": "Row_1yibqsk",
+        "columns": null
+      },
+      "id": "Field_07r0rwl",
+      "key": "teamleadCheck",
+      "description": "Wähle eine Option",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "Was muss verbessert werden?",
+      "type": "textarea",
+      "layout": {
+        "row": "Row_01djtmd",
+        "columns": null
+      },
+      "id": "Field_1kjmov0",
+      "key": "commentMoreInfo",
+      "validate": {
+        "required": false
+      },
+      "conditional": {
+        "hide": "=teamleadCheck != \"moreInfo\""
+      }
+    }
+  ],
+  "type": "default",
+  "id": "teamlead_checkAntrag_7",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.28.0"
+  },
+  "executionPlatform": "Camunda Platform",
+  "executionPlatformVersion": "7.22.0",
+  "schemaVersion": 16
+}

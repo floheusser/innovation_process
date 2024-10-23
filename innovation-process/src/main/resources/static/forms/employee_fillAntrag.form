@@ -1,0 +1,76 @@
+{
+  "components": [
+    {
+      "label": "Titel der Innovation",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_0v5zotn",
+        "columns": null
+      },
+      "id": "Field_16cjkg2",
+      "key": "title",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "Beschreibung der Innovation",
+      "type": "textarea",
+      "layout": {
+        "row": "Row_0mmspai",
+        "columns": null
+      },
+      "id": "Field_1ws9edl",
+      "key": "description",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "Erfasser",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_0yndohf",
+        "columns": null
+      },
+      "id": "Field_07lmdtb",
+      "key": "employeeName",
+      "description": "Vor- und Nachname"
+    },
+    {
+      "subtype": "date",
+      "dateLabel": "Datum",
+      "label": "Date time",
+      "type": "datetime",
+      "layout": {
+        "row": "Row_15o4p3i",
+        "columns": null
+      },
+      "id": "Field_1bzcs9j",
+      "key": "date",
+      "validate": {
+        "required": true
+      },
+      "disallowPassedDates": true
+    },
+    {
+      "label": "Kommentar",
+      "type": "textarea",
+      "layout": {
+        "row": "Row_1izntnx",
+        "columns": null
+      },
+      "id": "Field_0x69x75",
+      "key": "comment"
+    }
+  ],
+  "type": "default",
+  "id": "employee_fillAntrag",
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.6.0",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.28.0"
+  },
+  "schemaVersion": 16
+}

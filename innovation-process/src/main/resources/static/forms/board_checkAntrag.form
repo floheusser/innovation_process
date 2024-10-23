@@ -1,0 +1,42 @@
+{
+  "components": [
+    {
+      "label": "Antrag annehmen?",
+      "type": "select",
+      "layout": {
+        "row": "Row_1htlhor",
+        "columns": null
+      },
+      "id": "Field_02n2vh4",
+      "key": "teamleiterCheck",
+      "description": "Wähle zwischen den Optionen aus",
+      "valuesKey": "[{\"label\":\"Annehmen\",\"value\":\"approved\"},{\"label\":\"Ablehnen\",\"value\":\"declined\"},{\"label\":\"MehrInformationen\",\"value\":\"moreInfo\"}]",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "Kommentar",
+      "type": "textarea",
+      "layout": {
+        "row": "Row_0ke7jhz",
+        "columns": null
+      },
+      "id": "Field_0vbld1r",
+      "key": "comment",
+      "description": "Falls Sie Ablehnen, geben sie Bitte einen Kommentar ein",
+      "conditional": {
+        "hide": "=boardCheck = declined"
+      }
+    }
+  ],
+  "type": "default",
+  "id": "board_checkAntrag",
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.6.0",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.28.0"
+  },
+  "schemaVersion": 16
+}
