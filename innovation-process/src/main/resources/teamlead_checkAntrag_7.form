@@ -83,6 +83,20 @@
       "readonly": true
     },
     {
+      "label": "Teamlead E-Mail",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_0w7hc23",
+        "columns": null
+      },
+      "id": "Field_0aij8i0",
+      "key": "teamLeadEmail",
+      "validate": {
+        "required": true,
+        "pattern": "^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$"
+      }
+    },
+    {
       "values": [
         {
           "label": "Annehmen",

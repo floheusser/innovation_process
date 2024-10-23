@@ -15,10 +15,12 @@ public class ApprovedInnovationRequestMailDelegate implements JavaDelegate {
         // Retrieve email addresses from process variables
         String employeeEmail = (String) execution.getVariable("employeeEmail");
         String teamLeadEmail = (String) execution.getVariable("teamLeadEmail");
+        String innovationTitle = (String) execution.getVariable("title");
 
         // Email content
         String subject = "Innovation Request Approved";
-        String body = "Dear Employee and Team Lead,\n\nYour innovation request has been approved.\n\nBest regards,\nInnovation Board";
+        String body = "Dear Employee and Team Lead,\n\nYour innovation ( " + innovationTitle
+                + ") request has been approved.\n\nBest regards,\nInnovation Board";
 
         // Send email
         sendEmail(employeeEmail, teamLeadEmail, subject, body);
@@ -26,13 +28,22 @@ public class ApprovedInnovationRequestMailDelegate implements JavaDelegate {
 
     private void sendEmail(String to1, String to2, String subject, String body) throws MessagingException {
         // Email configuration
-        String from = "your-email@example.com"; // Replace with your email
-        String host = "smtp.example.com"; // Replace with your SMTP server
+        String from = "innovation.process@gmx.ch";
+        String username = "innovation.process@gmx.ch";
+        String password = "NoFear-11";
+        String host = "mail.gmx.net";
 
         Properties properties = System.getProperties();
-        properties.setProperty("mail.smtp.host", host);
+        properties.put("mail.smtp.host", host);
+        properties.put("mail.smtp.port", "587");
+        properties.put("mail.smtp.auth", "true");
+        properties.put("mail.smtp.starttls.enable", "true"); 
 
-        Session session = Session.getDefaultInstance(properties);
+        Session session = Session.getInstance(properties, new javax.mail.Authenticator() {
+            protected PasswordAuthentication getPasswordAuthentication() {
+                return new PasswordAuthentication(username, password);
+            }
+        });
 
         try {
             MimeMessage message = new MimeMessage(session);

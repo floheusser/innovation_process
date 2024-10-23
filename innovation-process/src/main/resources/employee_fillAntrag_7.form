@@ -41,6 +41,20 @@
       }
     },
     {
+      "label": "E-Mail Erfasser",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_1x0chxd",
+        "columns": null
+      },
+      "id": "Field_1wzzquk",
+      "key": "employeeEmail",
+      "validate": {
+        "required": true,
+        "pattern": "^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$"
+      }
+    },
+    {
       "label": "Status",
       "type": "textfield",
       "layout": {
