@@ -9,8 +9,8 @@
         <bpmn:flowNodeRef>Event_1igjloj</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Activity_0c7ghul</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Activity_0n8t3fm</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>Event_1g9vil4</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Activity_1apdzru</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Event_1g9vil4</bpmn:flowNodeRef>
       </bpmn:lane>
       <bpmn:lane id="board" name="Innovationsboard">
         <bpmn:flowNodeRef>Event_15cb47r</bpmn:flowNodeRef>
@@ -70,7 +70,7 @@
     <bpmn:boundaryEvent id="Event_0bkvz6h" cancelActivity="false" attachedToRef="Activity_17hcmsk">
       <bpmn:outgoing>Flow_08rarue</bpmn:outgoing>
       <bpmn:timerEventDefinition id="TimerEventDefinition_1udbk3l">
-        <bpmn:timeDuration xsi:type="bpmn:tFormalExpression">PT1M</bpmn:timeDuration>
+        <bpmn:timeDuration xsi:type="bpmn:tFormalExpression">PT24H</bpmn:timeDuration>
       </bpmn:timerEventDefinition>
     </bpmn:boundaryEvent>
     <bpmn:userTask id="Activity_0n8t3fm" name="Innovation Antrag ausfüllen" camunda:formRef="employee_fillAntrag_7" camunda:formRefBinding="latest" camunda:candidateGroups="employee">
@@ -78,10 +78,6 @@
       <bpmn:outgoing>Flow_0y9irc4</bpmn:outgoing>
     </bpmn:userTask>
     <bpmn:sequenceFlow id="Flow_08rarue" sourceRef="Event_0bkvz6h" targetRef="Activity_1dk76dv" />
-    <bpmn:endEvent id="Event_15cb47r" name="Bestätigungsmail an TL und MA">
-      <bpmn:incoming>Flow_1rdf5n5</bpmn:incoming>
-      <bpmn:messageEventDefinition id="MessageEventDefinition_1k1ty10" camunda:class="ch.bpm.innovation.innovation_process.delegates.ApprovedInnovationRequestMailDelegate" />
-    </bpmn:endEvent>
     <bpmn:userTask id="Activity_10uuak3" name="Prüfung Board" camunda:formRef="board_checkAntrag_7" camunda:formRefBinding="latest" camunda:candidateGroups="innovationBoard">
       <bpmn:incoming>Flow_041k2y2</bpmn:incoming>
       <bpmn:incoming>Flow_0rnl6kk</bpmn:incoming>
@@ -125,6 +121,10 @@
       <bpmn:incoming>Flow_1he194q</bpmn:incoming>
       <bpmn:outgoing>Flow_15uhexu</bpmn:outgoing>
     </bpmn:serviceTask>
+    <bpmn:endEvent id="Event_15cb47r" name="Bestätigungsmail an TL und MA">
+      <bpmn:incoming>Flow_1rdf5n5</bpmn:incoming>
+      <bpmn:messageEventDefinition id="MessageEventDefinition_1k1ty10" camunda:class="ch.bpm.innovation.innovation_process.delegates.ApprovedInnovationRequestMailDelegate" />
+    </bpmn:endEvent>
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_0me2b65">
@@ -246,7 +246,7 @@
         <di:waypoint x="480" y="880" />
         <di:waypoint x="480" y="460" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="845" y="868" width="69" height="14" />
+          <dc:Bounds x="845" y="763" width="69" height="14" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_08rarue_di" bpmnElement="Flow_08rarue">
