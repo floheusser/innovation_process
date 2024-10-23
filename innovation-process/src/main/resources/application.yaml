@@ -1,4 +1,19 @@
-spring.datasource.url: jdbc:h2:file:./camunda-h2-database
+spring:
+  datasource:
+    url: jdbc:h2:file:./camunda-h2-database
+    driverClassName: org.h2.Driver
+    username: sa
+    password:  # Leer lassen, wenn kein Passwort erforderlich ist
+    platform: h2
+  h2:
+    console:
+      enabled: true
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
 
 camunda.bpm:
   admin-user:
